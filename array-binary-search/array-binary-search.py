@@ -1,9 +1,20 @@
-def BinarySearch(lst,n):
-    if n in lst:
-        for i in range(len(lst)):
-            if lst[i]==n:
-                return i
-    else:
-        return -1
+def BinarySearch(arr,n):
+   begin=0
+   end =len(arr)-1
+   while begin <= end :
+        mid=  begin+(end-begin)//2
+        mid_value=arr[mid]
+        if mid_value == n:
+            return mid
+        elif mid_value>n:
+            end=mid-1
+        else:
+            begin=mid+1
+   return -1
 
-print (BinarySearch([1, 2, 3, 5, 6, 7], 4))
+
+
+print(BinarySearch([4, 8, 15, 16, 23, 42], 34))
+
+
+
