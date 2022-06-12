@@ -16,7 +16,7 @@ class linkedlist:
         node.next = self.head
         print(node.next)
 
-        
+
         self.head = node
 
 
