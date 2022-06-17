@@ -6,3 +6,5 @@
 [class2](class2.md)
 
 [class3](class3.md)
+
+[class6](class6.md)

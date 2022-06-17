@@ -27,63 +27,70 @@ class linkedlist:
 
 
 
-
-
-    def insert_before(self,given_ptr,val):
-
-            global head
-
-
-            if head == given_ptr:
-
-
-                n = Node(val)
-
-
-                n.next = head
-
-
-                head = n
-                return n
-
-
+    def includes (self,value):
+        concurrent = self.head
+        while concurrent:
+            if concurrent.value == value:
+                return True
             else:
+                concurrent=concurrent.next
+        return False
 
-                p = None
-                n = head
+
+    def Insert_After(self, position, newElement):
+            node = Node(newElement)
 
 
-                while (n != given_ptr):
-                    p = n
-                    n = n.next
+            if self.head  == None:
+                self.head = node
+            else:
+                concurrent = self.head
+                try:
+                    while concurrent.value != position:
 
-                # Create a node
-                m = Node(val)
 
-                # Update the m.next
-                m.next = p.next
+                        concurrent = concurrent.next
+                    if concurrent.next==None:
+                        concurrent.next=node
+                    else:
 
-                # Update previous node's next
-                p.next = m
+                        node.next = concurrent.next
 
-            return m
+                        concurrent.next = node
+                except:
+                    print( "No change, method exception")
 
-    def insert_After(self, prev_node, new_data):
 
-        node = Node(new_data)
+
+
+
+    def Insert_Before(self,position, newElement):
+
+        node = Node(newElement)
+
         if self.head == None:
             self.head = node
         else:
             concurrent = self.head
-            while concurrent.next != prev_node:
-                concurrent = concurrent.next
-                print("hello")
-            concurrent.next
+            try:
+                while concurrent.next.value != position:
+                    concurrent = concurrent.next
 
-            concurrent.next = node
+                node.next=concurrent.next
+
+                concurrent.next=node
 
 
 
+            except:
+                print("No change, method exception")
+
+
+
+
+
+
+     
 
 
 
@@ -97,14 +104,7 @@ class linkedlist:
             item += "Null"
             return item
 
-    def includes(self, value):
-        concurrent = self.head
-        while concurrent:
-            if concurrent.value == value:
-                return True
-            else:
-                concurrent = concurrent.next
-        return False
+
 
 a=linkedlist()
 
@@ -116,7 +116,9 @@ a.append(2)
 # a.append(5)
 
 
-print(a.to_string())
-print(a.insert_After(3,5))
-print(a.to_string())
-# print(a.insert_before(3, 5))
+# print(a.to_string())
+a.Insert_After(3, 5)
+
+# print(a.to_string())
+# a.Insert_Before(3, 5)
+# print(a.to_string())
