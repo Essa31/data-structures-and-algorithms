@@ -1,5 +1,5 @@
 import pytest
-from linked_list_insertions.linked_list_insertions  import (Node,linkedlist)
+from linked_list_insertions.linked_list_insertions  import Node,linkedlist
 a=linkedlist()
 
 a.append(1)
@@ -32,6 +32,8 @@ def test_Insert_Before():
     actual = a.to_string()
     expected="<1> -- ><5> -- ><3> -- ><2> -- >Null"
     return actual == expected
+
+
 # Can successfully insert a node before the first node of a linked list
 def test_Insert_Before2():
 
@@ -39,6 +41,8 @@ def test_Insert_Before2():
     actual = a.to_string()
     expected="<5> -- ><1> -- ><3> -- ><2> -- >Null"
     return actual == expected
+
+
 #Can successfully insert after a node in the middle of the linked list
 def test_Insert_After():
 
@@ -46,6 +50,8 @@ def test_Insert_After():
     actual = a.to_string()
     expected = "<1> -- ><3> -- ><5> -- ><2> -- >Null"
     return actual == expected
+
+
 #Can successfully insert a node after the last node of the linked list
 def test_Insert_After2():
     a.Insert_After(2, 5)

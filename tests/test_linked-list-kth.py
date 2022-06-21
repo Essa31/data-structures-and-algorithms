@@ -1,5 +1,5 @@
 import pytest
-from linked_list_kth.linked_list_kth  import (Node,linkedlist)
+from linked_list_kth.linked_list_kth  import Node,linkedlist
 a=linkedlist()
 
 a.append(1)
