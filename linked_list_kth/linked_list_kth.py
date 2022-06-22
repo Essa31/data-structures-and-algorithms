@@ -45,10 +45,7 @@ class linkedlist:
                 return "Exception"
 
         else:
-            if k >= -l:
-                return x[k]
-            else:
-                return "Exception"
+            return "Exception"
 
 
 
@@ -57,7 +54,9 @@ a=linkedlist()
 
 a.append(1)
 a.append(3)
-
+a.append(8)
 a.append(2)
 
-print(a.kth_From_End(4))
+print(a.kth_From_End(0))
+print(a.kth_From_End(-2))
+print(a.kth_From_End(-6))
