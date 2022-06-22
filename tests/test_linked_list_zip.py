@@ -1,5 +1,5 @@
 import pytest
-from linked_list_zip.linked_list_zip  import (Node,linkedlist)
+from linked_list_zip.link_list_zip import Node,linkedlist
 
 
 
@@ -36,5 +36,5 @@ def test_zip3():
     a.zipLists(c,b)
 
     actual=a.to_string()
-    expected=""
+    expected="<1> -- ><5> -- ><3> -- ><9> -- ><4> -- >Null"
     return actual==expected
