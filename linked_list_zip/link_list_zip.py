@@ -76,5 +76,5 @@ d.append(3)
 d.append(4)
 d.append(5)
 d.append(6)
-a.zipLists(a,d)
-print(a.to_string())
+
+
