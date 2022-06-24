@@ -1,5 +1,5 @@
 import pytest
-from linked_list_kth.linked_list_kth  import (Node,linkedlist)
+from linked_list_kth.linked_list_kth  import Node,linkedlist
 a=linkedlist()
 
 a.append(1)
@@ -18,31 +18,31 @@ def test_kth_From_End():
     k=4
     actual=a.kth_From_End(k)
     expected="Exception"
-    return actual==expected
+    assert actual==expected
 # Where k and the length of the list are the same
 def test_kth_From_End2():
     k = 3
     actual = a.kth_From_End(k)
     expected = "Exception"
-    return actual == expected
+    assert actual == expected
 #Where k is not a positive integer
 def test_kth_From_End3():
     k = -3
     actual = a.kth_From_End(k)
     expected = "Exception"
-    return actual == expected
+    assert actual == expected
 #“Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 def test_kth_From_End4():
     k = 1
     actual = a.kth_From_End(k)
     expected = "3"
-    return actual == expected
+    assert actual == expected
 #Where the linked list is of a size 1
 def test_kth_From_End5():
     k = 0
     actual = d.kth_From_End(k)
     expected = "3"
-    return actual == expected
+    assert actual == expected
 
 
 

@@ -114,19 +114,18 @@ class linkedlist:
 
 
 a=linkedlist()
-
-
 a.append(1)
 a.append(3)
 a.append(2)
 
+a.Insert_Before(1,5)
+a.Insert_After(1,5)
+
+
 # a.append(5)
 
 
-print(a.to_string())
-a.Insert_After(2, 5)
 
-# print(a.to_string())
-# a.Insert_Before(1, 5)
+
 print(a.to_string())
-#good job
+
