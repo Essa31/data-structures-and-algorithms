@@ -1,5 +1,5 @@
 import pytest
-from stack_and_queue.stack_and_queue1 import *
+from stack_and_queue.stack_and_queue import *
 #Stack-------------------------------------------------
 stack1=Stack()
 
