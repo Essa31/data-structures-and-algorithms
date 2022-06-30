@@ -83,6 +83,7 @@ class Queue:
         if (self.front == None):
 
             self.rear = None
+        return self.front.value
 
     def peek(self):
         if self.isEmpty():
