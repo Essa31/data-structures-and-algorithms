@@ -21,6 +21,7 @@ If pref is not "dog" or "cat" then return n
 I followed the approach that the code takes the least time and space, where B(o) takes space and time and be simple to be easy to understand
 
 
+
 ## Solution
 ```
 #Create a class named Dog that takes the name and type of the dog
