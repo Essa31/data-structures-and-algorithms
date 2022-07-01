@@ -76,13 +76,4 @@ class Pseudo_queue:
             raise Exception("Popping from an empty stack")
 
 
-stack = Pseudo_queue()
-for i in range(1, 9):
-    stack.push(i)
-print(f"Stack: {stack}")
 
-
-
-stack.dequeue()
-
-print(f"Stack: {stack}")
