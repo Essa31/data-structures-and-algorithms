@@ -64,24 +64,25 @@ class Pseudo_queue:
             while not self.isEmpty():
                 x=self.pop()
                 lst+=[x]
-            str(self)
-            lst.pop()
+
+            x=lst.pop()
+            print(x)
             lst=lst[::-1]
             for i in lst:
                 self.push(i)
+            return x
 
         else:
             raise Exception("Popping from an empty stack")
 
 
-# stack = Pseudo_queue()
-# # for i in range(1, 9):
-# #     stack.push(i)
-# # print(f"Stack: {stack}")
-#
-#
-# # print(stack.isEmpty())
-# # print(stack.peek())
-# stack.dequeue()
-# # stack.enqueue(6)
-# print(f"Stack: {stack}")
+stack = Pseudo_queue()
+for i in range(1, 9):
+    stack.push(i)
+print(f"Stack: {stack}")
+
+
+
+stack.dequeue()
+
+print(f"Stack: {stack}")
