@@ -11,7 +11,7 @@ representing whether or not the brackets in the string are balanced
 
 ## Whiteboard Process
 
-![class13](2022-06-29%20(3).png)
+![class13](ch13.png)
 
 
 ## Approach & Efficiency
