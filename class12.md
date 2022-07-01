@@ -13,7 +13,8 @@ If pref is not "dog" or "cat" then return n
 
 ## Whiteboard Process
 
-![class12](2022-07-01.png)
+![enqueue](2022-07-01.png)
+![dequeue](2022-07-01%20(2).png)
 
 ## Approach & Efficiency
 
