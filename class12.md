@@ -22,7 +22,6 @@ I followed the approach that the code takes the least time and space, where B(o)
 
 
 
-
 ## Solution
 ```
 #Create a class named Dog that takes the name and type of the dog
