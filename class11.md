@@ -7,9 +7,9 @@
 - methods are enqueue and dequeue
 ## Whiteboard Process
 
-![enqueue](2022-06-27%20(1).png)
+![enqueue](en11.png)
 
-![dequeue](de.png)
+![dequeue](de11.png)
 
 
 ### Approach & Efficiency
