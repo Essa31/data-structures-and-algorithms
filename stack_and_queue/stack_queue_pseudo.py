@@ -58,18 +58,25 @@ class Pseudo_queue:
         self.push(value)
 
 
+#Write a function called  dequeue
     def dequeue(self):
+        #Set a condition if the stack is not empty, start executing the code, but if it is empty, give a warning
+
         if not self.isEmpty():
             lst=[]
+            #3.I'm making a while loop that goes through each element in stack1 and deletes it and then puts it in stack2
+
             while not self.isEmpty():
                 x=self.pop()
                 lst+=[x]
-
+            # delete the latest items added to Stack 2
             x=lst.pop()
             print(x)
+            #I reverse the order of stack and then re-enter the elements in stack2 into stack 1
             lst=lst[::-1]
             for i in lst:
                 self.push(i)
+            #return dequeue value
             return x
 
         else:
