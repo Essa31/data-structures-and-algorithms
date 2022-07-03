@@ -93,11 +93,57 @@ Returns: Boolean indicating whether or not the queue is empty
 I followed the approach that the code takes the least time and space, where B(o) takes space and time and be simple to be easy to understand
 
 ## API
+## Stack
+Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+This object should be aware of a default empty value assigned to top when the stack is created.
+The class should contain the following methods:
 
-### Stacks and Queues
+* Arguments: value
 
-An array is a random access data structure, where each element can be accessed directly and in constant time. A typical illustration of random access is a book - each page of the book can be open independently of others. Random access is critical to many algorithms, for example binary search.
+* adds a new node with that value to the top of the stack with an O(1) Time performance.
 
-A linked list is a sequential access data structure, where each element can be accesed only in particular order. A typical illustration of sequential access is a roll of paper or tape - all prior material must be unrolled in order to get to data you want.
+## pop
 
-In this note we consider a subcase of sequential data structures, so-called limited access data sturctures.
+* Arguments: none
+
+* Returns: the value from node from the top of the stack
+
+* Removes the node from the top of the stack
+
+* Should raise exception when called on empty stack
+
+## peek
+
+* Arguments: none
+
+* Returns: Value of the node located at the top of the stack
+
+* Should raise exception when called on empty stack
+## is empty
+
+* Arguments: none
+
+* Returns: Boolean indicating whether or not the stack is empty.
+
+## Queue
+* Create a Queue class that has a front property. It creates an empty Queue when instantiated.
+* This object should be aware of a default empty value assigned to front when the queue is created.
+* The class should contain the following methods:
+## enqueue
+
+* Arguments: value
+* adds a new node with that value to the back of the queue with an O(1) Time performance.
+## dequeue
+
+* Arguments: none
+* Returns: the value from node from the front of the queue
+* Removes the node from the front of the queue
+* Should raise exception when called on empty queue
+## peek
+* Arguments: none
+* Returns: Value of the node located at the front of the queue
+* Should raise exception when called on empty stack
+## is empty
+
+Arguments: none
+Returns: Boolean indicating whether or not the queue is empty
