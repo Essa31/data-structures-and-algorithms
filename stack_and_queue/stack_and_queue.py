@@ -83,7 +83,11 @@ class Queue:
         if (self.front == None):
 
             self.rear = None
+<<<<<<< HEAD:stack_and_queue/stack_and_queue1.py
+        return self.front.value
+=======
         return self.front
+>>>>>>> a8500429ed90d34354b6e9aa6ff020e35379a72e:stack_and_queue/stack_and_queue.py
 
     def peek(self):
         if self.isEmpty():
