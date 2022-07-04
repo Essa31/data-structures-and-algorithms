@@ -93,6 +93,8 @@ Returns: Boolean indicating whether or not the queue is empty
 I followed the approach that the code takes the least time and space, where B(o) takes space and time and be simple to be easy to understand
 
 ## API
+
+
 ## Stack
 Create a Stack class that has a top property. It creates an empty Stack when instantiated.
 This object should be aware of a default empty value assigned to top when the stack is created.
