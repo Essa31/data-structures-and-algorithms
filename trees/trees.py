@@ -4,7 +4,7 @@
 # Binary Tree
 
 
-from stack_and_queue.stack_and_queue import *
+
 
 
 class Node:
@@ -139,3 +139,25 @@ class BinarySearchTree(BinaryTree):
                 else:
                     cur_node = cur_node.right
         return False
+
+    def maxValue(self):
+        if self.root!=None:
+            current = self.root
+
+
+            while (current.right):
+                current = current.right
+            return current.value
+        else:
+            raise Exception("tree is empty")
+
+t = BinarySearchTree()
+t.add(10)
+t.add(5)
+t.add(8)
+t.add(3)
+t.add(20)
+t.add(25)
+t.add(15)
+
+print(t.maxValue())
