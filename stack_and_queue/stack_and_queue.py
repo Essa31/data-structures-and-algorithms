@@ -83,7 +83,10 @@ class Queue:
         if (self.front == None):
 
             self.rear = None
-        return self.front
+
+        return self.front.value
+
+
 
     def peek(self):
         if self.isEmpty():
@@ -102,14 +105,17 @@ class Queue:
 
 #stack-----------------------------------------------------------------
 stack = Stack()
-for i in range(1, 9):
-    stack.push(i)
+
+stack.push(10)
+stack.push(5)
+stack.push(3)
+stack.push(7)
 print(f"Stack: {stack}")
 
 
 print(stack.isEmpty())
 print(stack.peek())
-print( stack)
+print(stack.Max_stack())
 
 #Queue--------------------------------------------------------------------
 
