@@ -150,6 +150,24 @@ class BinarySearchTree(BinaryTree):
             return current.value
         else:
             raise Exception("tree is empty")
+    def BinarySearchTree(self):
+        visit=[]
+        rot=[]
+        if self.root!=None:
+            current = self.root
+            rot+=[current]
+            print(rot)
+            try:
+                while rot!=[]:
+                    rot+=[rot[0].right]
+                    rot+=[rot[0].left]
+                    visit+=[rot[0].value]
+                    del rot[0]
+            except:
+                return visit
+
+
+
 
 t = BinarySearchTree()
 t.add(10)
@@ -160,4 +178,4 @@ t.add(20)
 t.add(25)
 t.add(15)
 
-print(t.maxValue())
+print(t.BinarySearchTree())
