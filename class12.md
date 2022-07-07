@@ -13,12 +13,13 @@ If pref is not "dog" or "cat" then return n
 
 ## Whiteboard Process
 
-![enqueue](2022-07-01.png)
-![dequeue](2022-07-01%20(2).png)
+![enqueue](ch12en.png)
+![dequeue](ch12de.png)
 
 ## Approach & Efficiency
 
 I followed the approach that the code takes the least time and space, where B(o) takes space and time and be simple to be easy to understand
+
 
 
 ## Solution

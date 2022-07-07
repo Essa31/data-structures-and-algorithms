@@ -81,7 +81,7 @@ class Queue:
         if (self.front == None):
 
             self.rear = None
-        return self.front
+        return self.front.value
 
     def peek(self):
         if self.isEmpty():
@@ -98,41 +98,49 @@ class Queue:
         return out
 
 
-
+#Create a class named Dog that takes the name and type of the dog
 class Dog:
     def __init__(self,name,type="dog"):
         self.name=name
         self.type=type
+#Create a class named Cat that takes the name and type of the cat
 class Cat:
     def __init__(self,name,type="cat"):
         self.name=name
         self.type=type
 
-
+#Create a class named AnimalShelter
 class AnimalShelter():
     def __init__(self):
         self.dog=Queue()
         self.cat=Queue()
 
-
+    #Declare Enqueue That Take Animal_obj
     def enqueue(self, animal):
-
+        # If animal type is a cat, it is added to the Cat queue.
         if animal.type.lower()=="cat":
             self.cat.enqueue(animal)
+        # If animal type is a dog, it is added to the Dog queue.
         elif animal.type.lower()=="dog":
             self.dog.enqueue(animal)
+        # return animal type
         return animal.type
 
 
 
 
-
+    #Declare Dnqueue That Take pref
     def dequeue(self,pref):
+        # If pref is a cat,Delete the first item income to Cat Queue and return string cat
         if pref=="cat":
-            return self.cat.dequeue()
+            self.cat.dequeue()
+            return "cat"
+        # If pref is a dog,Delete the first item income to Dog Queue and return string dog
         elif pref=="dog":
-            return self.dog.dequeue()
+            self.dog.dequeue()
+            return "dog"
 
+        #If pref is not a dog or cat, return None
         else:
             return None
 
