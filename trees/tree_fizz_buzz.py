@@ -1,81 +1,67 @@
-class K_Node:
-    def __init__(self, value):
+class KTNode:
+    def __init__(self, value=None):
         self.value = value
-        self.right = None
-        self.left = None
+        self.children = []
 
 
-class K_Tree:
+class KaryTree:
+    def __init__(self, root=None):
+        self.root = root
 
-    def __init__(self):
-        self.root = None
+    def kary_tree_node_values(self):
+        nodes = []
 
-    def __str__(self):
-        if self.root is None:
-            return 'None'
-        else:
-            res_list = self.pre_order()
-            output = ''
-            for i in res_list:
-                output += f'{i}'
-            return output
-    def print_tree_as_arr(self,root):
-        visit=[]
-        rot=[]
-        if root!=None:
-            current = root
-            rot+=[current]
+        def walk(node):
+            nodes.append(node.value)
 
-            try:
-                while rot!=[]:
-                    rot+=[rot[0].left]
-                    rot+=[rot[0].right]
-                    visit+=[rot[0].value]
-                    del rot[0]
-            except:
+            if node.children:
+                for child in node.children:
+                    walk(child)
 
-                return visit
-        else:
-            raise Exception("tree is empty")
+        walk(self.root)
 
-    def fizz_buzz_tree(self, root):
-
-        rot = []
-        if root != None:
-            current = root
-            rot += [current]
-
-            try:
-                while rot != []:
-                    rot += [rot[0].left]
-                    rot += [rot[0].right]
-
-                    if rot[0].value%3==0 and rot[0].value%5==0:
-                       rot[0].value="FizzBuzz"
+        return nodes
 
 
-                    elif rot[0].value % 3 == 0 :
-                        rot[0].value= "Fizz"
+def fizz_buzz_tree(kary_tree):
+    copy = kary_tree
 
+    def traverse(root):
+        if root.children:
+            for child in root.children:
+                root.value = str(root.value)
+                if child.value % 3 == 0 and child.value % 5 == 0:
+                    child.value = "FizzBuzz"
+                elif child.value % 3 == 0:
+                    child.value = "Fizz"
+                elif child.value % 5 == 0:
+                    child.value = "Buzz"
+                else:
+                    child.value = str(child.value)
 
-                    elif rot[0].value % 5 == 0 :
-                        rot[0].value="Buzz"
+    return traverse(copy.root)
+if __name__ == "__main__":
+    tree = KaryTree()
+    expected = [
+        "FizzBuzz" if (i % 5 == 0 and i % 3 == 0) else "Fizz" if i % 3 == 0 else "Buzz" if i % 5 == 0 else str(i) for i
+        in range(1, 30)]
+    print(expected)
+    # tree.root = KTNode('A')
+    # tree.root.left = KTNode('B')
+    # tree.root.right = KTNode('C')
+    # tree.root.left.left = KTNode('D')
+    # tree.root.left.right = KTNode('E')
+    # tree.root.right.left = KTNode('F')
+    k_tree = KaryTree()
+    k_tree.root = KTNode(1)
+    nodes = []
 
+    for val in range(2, 50):
+        nodes.append(KTNode(val))
 
+    for node in nodes:
+        k_tree.root.children.append(node)
+    fizz_buzz_tree(k_tree)
+    actual = k_tree.kary_tree_node_values()
 
-                    del rot[0]
-            except:
-
-                return root
-        else:
-            raise Exception("tree is empty")
-
-trees=K_Tree()
-root = K_Node(7)
-root.left = K_Node(6)
-root.right = K_Node(8)
-root.left.left = K_Node(21)
-root.left.right = K_Node(5)
-print(trees.fizz_buzz_tree(root))
-print(trees.print_tree_as_arr(root))
-
+    print(actual)
