@@ -38,37 +38,37 @@ class K_Tree:
         else:
             raise Exception("tree is empty")
 
-    def fizz_buzz_tree(self, root):
+def fizz_buzz_tree(root):
 
-        rot = []
-        if root != None:
-            current = root
-            rot += [current]
+    rot = []
+    if root != None:
+        current = root
+        rot += [current]
 
-            try:
-                while rot != []:
-                    rot += [rot[0].left]
-                    rot += [rot[0].right]
+        try:
+            while rot != []:
+                rot += [rot[0].left]
+                rot += [rot[0].right]
 
-                    if rot[0].value%3==0 and rot[0].value%5==0:
-                       rot[0].value="FizzBuzz"
-
-
-                    elif rot[0].value % 3 == 0 :
-                        rot[0].value= "Fizz"
+                if rot[0].value%3==0 and rot[0].value%5==0:
+                   rot[0].value="FizzBuzz"
 
 
-                    elif rot[0].value % 5 == 0 :
-                        rot[0].value="Buzz"
+                elif rot[0].value % 3 == 0 :
+                    rot[0].value= "Fizz"
+
+
+                elif rot[0].value % 5 == 0 :
+                    rot[0].value="Buzz"
 
 
 
                     del rot[0]
-            except:
+        except:
 
-                return root
-        else:
-            raise Exception("tree is empty")
+            return root
+    else:
+        raise Exception("tree is empty")
 
 trees=K_Tree()
 root = K_Node(7)
