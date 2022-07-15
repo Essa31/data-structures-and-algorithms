@@ -23,14 +23,14 @@ def test_enqueue2():
     expected="cat"
     assert actual == expected
 
-def test_not_animal_dequeue(Animal):
-    assert Animal.dequeue("mouse") is None
+def test_not_animal_dequeue():
+    assert Animal.dequeue("mouse") == None
 
 
 def test_dequeue():
     Animal.enqueue(Cat("log"))
     Animal.enqueue(Dog("lona"))
-    assert Animal.dequeue("dog").type == "dog"
+    assert Animal.dequeue("dog") == "dog"
 
 
 
@@ -38,4 +38,4 @@ def test_dequeue():
 def test_dequeue2():
     Animal.enqueue(Cat("log"))
     Animal.enqueue(Dog("lona"))
-    assert Animal.dequeue("cat").type == "cat"
+    assert Animal.dequeue("cat") == "cat"

@@ -102,10 +102,13 @@ class linkedlist:
     def to_string(self):
             concurrent=self.head
             item=""
+
             while concurrent:
                 item+=f'<{concurrent.value}> -- >'
                 concurrent=concurrent.next
             item += "Null"
+
+
             return item
 
 
@@ -125,5 +128,4 @@ a.Insert_After(1,5)
 
 
 print(a.to_string())
-# a.Insert_Before(1, 5)
 

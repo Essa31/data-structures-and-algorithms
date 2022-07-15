@@ -21,6 +21,19 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
+    def insert(self, ro, key):
+        self.root=ro
+        if self.root is None:
+            return Node(key)
+        else:
+            if self.root.value == key:
+                return self.root
+            elif self.root.value < key:
+                self.root.right = self.insert( self.root.right, key)
+            else:
+                self.root.left = self.insert( self.root.left, key)
+        return  self.root
+
     def pre_order(self):
         """
         get the nodes from tree in depth-first root-left-right
@@ -94,6 +107,35 @@ class BinaryTree:
             for i in res_list:
                 output += f'{i}'
             return output
+
+    def find_max(self):
+        if self.root is None:
+            return None
+
+        def traverse(root, maximum=0):
+            if root is None:
+                return maximum
+
+            if maximum < root.value:
+                maximum = root.value
+            left_of_tree = traverse(root.left, maximum)
+            if maximum < left_of_tree:
+                maximum = left_of_tree
+            right_of_tree = traverse(root.right, maximum)
+            if maximum < right_of_tree:
+                maximum = right_of_tree
+
+
+            return maximum
+
+
+        return traverse(self.root)
+
+
+
+
+
+
 class BinarySearchTree(BinaryTree):
     """
     this class is a  subclass of the BinaryTree class with Add and Contain methods
@@ -140,42 +182,5 @@ class BinarySearchTree(BinaryTree):
                     cur_node = cur_node.right
         return False
 
-    def maxValue(self):
-        if self.root!=None:
-            current = self.root
 
 
-            while (current.right):
-                current = current.right
-            return current.value
-        else:
-            raise Exception("tree is empty")
-    def BinarySearchTree(self):
-        visit=[]
-        rot=[]
-        if self.root!=None:
-            current = self.root
-            rot+=[current]
-            print(rot)
-            try:
-                while rot!=[]:
-                    rot+=[rot[0].right]
-                    rot+=[rot[0].left]
-                    visit+=[rot[0].value]
-                    del rot[0]
-            except:
-                return visit
-
-
-
-
-t = BinarySearchTree()
-t.add(10)
-t.add(5)
-t.add(8)
-t.add(3)
-t.add(20)
-t.add(25)
-t.add(15)
-
-print(t.BinarySearchTree())
