@@ -34,3 +34,7 @@
 
 [class18](class18.md)
 
+[class26](./sorting/insertion/README.md)
+
+[class27](./sorting/merge/README.md)
+
