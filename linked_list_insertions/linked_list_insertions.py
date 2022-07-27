@@ -61,7 +61,7 @@ class linkedlist:
                     print( "No change, method exception")
 
 
-
+"good job"
 
 
     def Insert_Before(self,position, newElement):
