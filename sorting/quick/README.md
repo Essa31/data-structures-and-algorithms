@@ -5,7 +5,11 @@
 ## Whiteboard Process
 
 
- ![quick_sort_image](quick_sort_whiteboard.png)
+![quick_sort_image](quick_sort_whiteboard.png)
+
+## Big O
+
+![Big(O)](Big(O).png)
 
 
 ## Approach
@@ -14,9 +18,9 @@
 
 ## Efficiency
 - Big O notation : 
-- quick sort is a recursive algorithm
-  - Time complexity: O(N^2)
-  - Space complexity:O(N)
+- Performance = > O ( n * log ( n ) ) on average 
+- O ( N ^ 2 ) : Worst case .
+- Space = > O ( log ( n ) ) . ( Not In place : Elements occupy auxiliary space ) 
 
 
 ## Solution

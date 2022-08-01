@@ -38,3 +38,5 @@
 
 [class27](./sorting/merge/README.md)
 
+[class28](./sorting/quick/README.md)
+
