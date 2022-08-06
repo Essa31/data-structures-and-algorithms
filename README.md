@@ -40,3 +40,4 @@
 
 [class28](./sorting/quick/README.md)
 
+[class30](./hashtable/class30.md)
