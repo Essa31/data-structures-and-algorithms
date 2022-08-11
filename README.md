@@ -41,3 +41,5 @@
 [class28](./sorting/quick/README.md)
 
 [class30](./hashtable/class30.md)
+
+[class31](./hashmap_repeated_word/class31.md)
