@@ -56,7 +56,6 @@ All methods don't use loops except the get() method, which takes a liner iterati
   - **Space**: O(1)
 
 ## API
-<!-- Description of each method publicly available in each of your hashtable -->
 
 - _set_: this method inserts data to the hash table.
 - _get_: this method gets value of a passed key, also handles collision.
