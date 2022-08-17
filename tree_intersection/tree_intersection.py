@@ -34,17 +34,17 @@ class BinaryTree:
         if not self.root:
             return self.root
 
-        def _walk(root, out):
+        def walk(root, out):
 
             if root.left:
-                _walk(root.left, out)
+                walk(root.left, out)
 
             out.append(root.value)
 
             if root.right:
-                _walk(root.right, out)
+                walk(root.right, out)
 
-        _walk(self.root, output)
+        walk(self.root, output)
         return output
 
 
@@ -85,7 +85,7 @@ class HashTable:
         """
         self.__size = size
         self.__buckets = [None] * size
-        self.__keys_array = []
+        self.__keys = []
 
     def __hash(self, key):
         """
@@ -103,12 +103,14 @@ class HashTable:
             :param value: value of the referenced key
             :return: None
         """
-        hashed_key = self.__hash(key)
-        if self.__buckets[hashed_key] is None:
-            hash_list = LinkedList()
-            self.__buckets[hashed_key] = hash_list
-        self.__keys_array.append(key)
-        self.__buckets[hashed_key].insert((key, value))
+
+        h_key = self.__hash(key)
+        if self.__buckets[h_key] is None:
+            h_list = LinkedList()
+            self.__buckets[h_key] = h_list
+        self.__keys.append(key)
+        self.__buckets[h_key].insert((key, value))
+
 
     def get(self, key):
         """
@@ -116,24 +118,45 @@ class HashTable:
             :param key: Hash key
             :return: referenced value by passed key
         """
-        values = []
+        value = []
 
-        hashed_key = self.__hash(key)
-        ll = self.__buckets[hashed_key]
-        if ll is None:
+        h_key = self.__hash(key)
+        linked_list_in_buckets = self.__buckets[h_key]
+        if linked_list_in_buckets is None:
             return None
 
-        current = ll.head
+        current = linked_list_in_buckets.head
         while current:
             if current.value[0] == key:
-                values.append(current.value[1])
+
+                value.append(current.value[1])
             current = current.next
 
-        if len(values) > 1:
-            return tuple(values)
-        else:
-            return values[0]
+        if len(value) > 1:
+            return tuple(value)
 
+        else:
+            return value[0]
+
+    def contains(self, key):
+        """
+        Used to find if the value is contained in the Hash Table or not.
+            :param key: key to reference can be string, number, etc...
+            :return: bool
+        """
+
+        if self.get(key):
+          return True
+
+        return False
+
+    def keys(self):
+        """
+        this method will return a collections of all the keys in hashmap as an object
+        :return: an array
+        """
+
+        return self.__keys
 
 def tree_intersection(tree1, tree2):
     """
@@ -143,19 +166,56 @@ def tree_intersection(tree1, tree2):
     :return: string
     """
     hash_map = HashTable()
-    t1 = tree1.in_order()
-    t2 = tree2.in_order()
+    tree_1 = tree1.in_order()
+    tree_2 = tree2.in_order()
+
+
     output = []
 
-    for i in range(len(t1)):
-        hash_map.set(str(t1[i]), "0")
-        hash_map.set(str(t2[i]), "0")
+    for i in range(len(tree_1)):
+        hash_map.set(str(tree_1[i]), "0")
+    print(hash_map.keys())
+    print(tree_2)
+    for i in tree_2:
 
-        if len(hash_map.get(str(t1[i]))) == 2:
-            output.append(str(t1[i]))
+        if str(i) in hash_map.keys():
+            output+= [str(i)]
 
-    return ", ".join(output)
 
+
+
+    return ",".join(output)
+
+
+b1_tree = BinaryTree()
+
+b1_tree.root = TreeNode(150)
+b1_tree.root.left = TreeNode(100)
+b1_tree.root.left.left = TreeNode(75)
+b1_tree.root.left.right = TreeNode(160)
+b1_tree.root.left.right.left = TreeNode(125)
+b1_tree.root.left.right.right = TreeNode(175)
+b1_tree.root.right = TreeNode(250)
+b1_tree.root.right.left = TreeNode(200)
+b1_tree.root.right.right = TreeNode(350)
+b1_tree.root.right.right.left = TreeNode(300)
+b1_tree.root.right.right.right = TreeNode(500)
+
+b2_tree = BinaryTree()
+
+b2_tree.root = TreeNode(42)
+b2_tree.root.left = TreeNode(100)
+b2_tree.root.left.left = TreeNode(15)
+b2_tree.root.left.right = TreeNode(160)
+b2_tree.root.left.right.left = TreeNode(125)
+b2_tree.root.left.right.right = TreeNode(175)
+b2_tree.root.right = TreeNode(600)
+b2_tree.root.right.left = TreeNode(200)
+b2_tree.root.right.right = TreeNode(350)
+b2_tree.root.right.right.left = TreeNode(4)
+b2_tree.root.right.right.right = TreeNode(500)
+
+print(tree_intersection(b1_tree, b2_tree))
 
 
 #utfuyibibiunuiubiub
