@@ -1,56 +1,26 @@
-## Challenge Summary
-- write a function takes an array of integers and return sorted array
+## Visual 
+- Review the pseudocode below,
+- then trace the algorithm by stepping through the process with the provided sample array.
+
+![image](visual_merge_sort%20(1).png)
 
 
-## Whiteboard Process
+
+## Trace/Step-through 
 
 
- ![merge_sort_image](merge_sort_whiteboard.png)
+![image](Tracing_merge_sort%20(1).png)
+
+- We will start our function by divide the array into two sub arrays ( left and right) based on the mid variable 
+- then we have two subarray we will do the same for the left side and the right side 
+- we will do tha same until we have the array as individual elements
+- then we will start comparing between the elements on the left side and put the elements on the correct place 
+- and we will do the same for the right side 
+- after we have the elements in the correct order we will merge it to get the final result (The sorted array )
 
 
-## Approach
-- merge sort algorithm 
 
-
-## Efficiency
-- Big O notation : 
-- merge sort is a recursive algorithm
-  - Time complexity: O(N)
-  - Space complexity:O(N)
-
-
-## Solution
-- create a function called merge_sort takes an array of integers and returns sorted array 
-- check if the length of the array is zero, if yes return EMPTY ARRAY msg 
-- check if the length of the array is one, if yes return the same array 
-- else 
-  - declare mid variable and assign the length of the array divided by 2 to it 
-  - declare left variable and assign the left subarray to it 
-  - declare right variable and assign the right subarray to it 
-  - call merge_sort function with the left variable 
-  - call merge_sort function with the right variable
-  - declare i variable equal zero 
-  - declare j variable equal zero
-  - declare k variable equal zero 
-  - using while loop based on i is less than the length of the left and j is less than the length of the right
-    - inside while loop 
-    - check if the value of i in the left subarray is less or equal than the value of j in the right subarray
-    - if yes, make the value of k index equal the value of i index in the left subarray and increase i by one 
-    - if no make the value of k index equal the value of j index in the right subarray and increase j by one 
-    - increase k by one 
-  - using while loop based on i is less than the length of the left subarray 
-    - inside while loop
-    - make the value of k index equal the value of i index the left subarray 
-    - increase i by one
-    - increase k by one
-  - using while loop based on j is less than the length of the right subarray 
-    - inside while loop
-    - make the value of k index equal the value of j index the right subarray 
-    - increase j by one
-    - increase k by one
-- return the sorted array 
-
-
-## TEST
-- all tests passed
-  - pytest .\tests\test_merge_sort.py
+## BigO notation:
+- because we used the recursive way
+- Time complexity : O(N*logN)
+- Space complexity : O(N)
