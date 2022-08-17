@@ -120,15 +120,16 @@ class HashTable:
         return self.__keys_array
 
 
-def left_join(ht1, ht2):
-    output = []
-
-    for i in ht1.keys():
-        if i in ht2.keys():
-            output.append([i, ht1.get(i), ht2.get(i)])
+def left_join(hash1, hash2):
+    reslt = []
+    print(hash1.keys())
+    print(hash2.keys())
+    for i in hash1.keys():
+        if i in hash2.keys():
+            reslt.append([i, hash1.get(i), hash2.get(i)])
         else:
-            output.append([i, ht1.get(i), "NULL"])
+            reslt.append([i, hash1.get(i), "NULL"])
 
-    return output
+    return reslt
 
 
