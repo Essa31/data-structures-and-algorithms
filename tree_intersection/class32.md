@@ -5,8 +5,8 @@
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![Whiteboard pic](Whiteboard.png)
-
+![Whiteboard pic](2022-08-17%20(6).png)
+![Whiteboard pic](2022-08-17%20(7).png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 I took an iterative approach, as for the Big O:
