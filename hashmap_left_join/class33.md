@@ -21,4 +21,7 @@ I took an iterative approach, as for the Big O:
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![Whiteboard pic](hashmap-left-join.png)
+
+![Whiteboard pic](2022-08-17%20(13).png)
+
+![Visualization ](2022-08-17%20(14).png)
