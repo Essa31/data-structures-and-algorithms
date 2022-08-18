@@ -5,7 +5,9 @@
 ## Whiteboard Process
 
 
-![quick_sort_image](quick_sort_whiteboard.png)
+![quick_sort_image](2022-08-18%20(3).png)
+
+![quick_sort_image](2022-08-18%20(4).png)
 
 ## Big O
 

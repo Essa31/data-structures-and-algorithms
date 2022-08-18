@@ -31,14 +31,14 @@ b2_tree.root.right.right.left = TreeNode(4)
 b2_tree.root.right.right.right = TreeNode(500)
 
 def test_common_values_between_two_trees():
-    assert tree_intersection(b1_tree, b2_tree) == "100, 125, 160, 175, 200, 350, 500"
+    assert tree_intersection(b1_tree, b2_tree) == "100,125,160,175,200,350,500"
 
 
 def test_output_datatype():
     assert type(tree_intersection(b1_tree, b2_tree)) == type(" ")
 
 
-
+# good work for me
 
 
 
