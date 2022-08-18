@@ -35,6 +35,22 @@ class LinkedList:
         node.next = self.head
         self.head = node
 
+    def __str__(self):
+        """
+        This function is used to print the entire liked list in a
+        specific format.
+        :return: String
+        """
+        temp_list = ''
+        current = self.head
+
+        while current:
+            temp_list += f"{{ {current.value} }} -> "
+            current = current.next
+
+        temp_list += "NULL"
+        return temp_list
+
 
 class HashTable:
     """
@@ -51,7 +67,7 @@ class HashTable:
         """
         self.__size = size
         self.__buckets = [None] * size
-        self.__keys_array = []
+        self.__keys = []
 
     def __hash(self, key):
         """
@@ -69,12 +85,14 @@ class HashTable:
             :param value: value of the referenced key
             :return: None
         """
-        hashed_key = self.__hash(key)
-        if self.__buckets[hashed_key] is None:
-            hash_list = LinkedList()
-            self.__buckets[hashed_key] = hash_list
-        self.__keys_array.append(key)
-        self.__buckets[hashed_key].insert((key, value))
+
+        h_key = self.__hash(key)
+        if self.__buckets[h_key] is None:
+            h_list = LinkedList()
+            self.__buckets[h_key] = h_list
+        self.__keys.append(key)
+        self.__buckets[h_key].insert((key, value))
+
 
     def get(self, key):
         """
@@ -82,26 +100,52 @@ class HashTable:
             :param key: Hash key
             :return: referenced value by passed key
         """
-        values = []
+        value = []
 
-        hashed_key = self.__hash(key)
-        ll = self.__buckets[hashed_key]
-        if ll is None:
+        h_key = self.__hash(key)
+        linked_list_in_buckets = self.__buckets[h_key]
+        if linked_list_in_buckets is None:
             return None
 
-        current = ll.head
+        current = linked_list_in_buckets.head
         while current:
             if current.value[0] == key:
-                values.append(current.value[1])
+
+                value.append(current.value[1])
             current = current.next
 
-        if len(values) > 1:
-            return tuple(values)
+        if len(value) > 1:
+            return tuple(value)
+
         else:
-            return values[0]
+            return value[0]
+
+    def contains(self, key):
+        """
+        Used to find if the value is contained in the Hash Table or not.
+            :param key: key to reference can be string, number, etc...
+            :return: bool
+        """
+
+        if self.get(key):
+          return True
+
+        return False
+
+    def keys(self):
+        """
+        this method will return a collections of all the keys in hashmap as an object
+        :return: an array
+        """
+
+        return self.__keys
+
+
+
 
 
 def repeated_word(string):
+    import re
     """
     This function finds the first repeated word within a given string.
     :param string: The string to check
@@ -110,8 +154,14 @@ def repeated_word(string):
     if len(string.split(" ")) < 2:
         return string
 
+
     hash_table = HashTable()
-    string_words = "".join(string.lower().split(",")).split(" ")
+
+    string = re.sub(r'[^\w\s]', '', string)
+
+    string=string.lower()
+
+    string_words = string.split(" ")
 
     for i in string_words:
         hash_table.set(i, "0")
