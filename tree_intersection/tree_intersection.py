@@ -174,8 +174,7 @@ def tree_intersection(tree1, tree2):
 
     for i in range(len(tree_1)):
         hash_map.set(str(tree_1[i]), "0")
-    print(hash_map.keys())
-    print(tree_2)
+
     for i in tree_2:
 
         if str(i) in hash_map.keys():
@@ -187,35 +186,4 @@ def tree_intersection(tree1, tree2):
     return ",".join(output)
 
 
-b1_tree = BinaryTree()
 
-b1_tree.root = TreeNode(150)
-b1_tree.root.left = TreeNode(100)
-b1_tree.root.left.left = TreeNode(75)
-b1_tree.root.left.right = TreeNode(160)
-b1_tree.root.left.right.left = TreeNode(125)
-b1_tree.root.left.right.right = TreeNode(175)
-b1_tree.root.right = TreeNode(250)
-b1_tree.root.right.left = TreeNode(200)
-b1_tree.root.right.right = TreeNode(350)
-b1_tree.root.right.right.left = TreeNode(300)
-b1_tree.root.right.right.right = TreeNode(500)
-
-b2_tree = BinaryTree()
-
-b2_tree.root = TreeNode(42)
-b2_tree.root.left = TreeNode(100)
-b2_tree.root.left.left = TreeNode(15)
-b2_tree.root.left.right = TreeNode(160)
-b2_tree.root.left.right.left = TreeNode(125)
-b2_tree.root.left.right.right = TreeNode(175)
-b2_tree.root.right = TreeNode(600)
-b2_tree.root.right.left = TreeNode(200)
-b2_tree.root.right.right = TreeNode(350)
-b2_tree.root.right.right.left = TreeNode(4)
-b2_tree.root.right.right.right = TreeNode(500)
-
-print(tree_intersection(b1_tree, b2_tree))
-
-
-#utfuyibibiunuiubiub
