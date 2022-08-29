@@ -39,32 +39,7 @@ class Graph:
     def get_neighbors(self, ver):
         return self.__adj_list.get(ver, [])
 
-    def depth_first(self, node=None):
-        if node is None:
-            return []
-        result = []
 
-        stack = []
-        start = node
-        visited_node = set()
-
-        stack.append(start)
-        visited_node.add(start)
-
-        while len(stack):
-            current = stack.pop()
-
-            result.append(current.value)
-
-            neighbors = self.get_neighbors(current)
-
-            for edge in neighbors:
-                neighbor = edge.vertex
-                if neighbor not in visited_node:
-                    stack.append(neighbor)
-                    visited_node.add(neighbor)
-
-        return result
 
 
 
